@@ -25,7 +25,7 @@ cloudinary.config({
 app.use(
   cors({
     credentials: true,
-    origin: "http://127.0.0.1:5173",
+    origin: "http://localhost:5173",
   })
 );
 
@@ -214,39 +214,41 @@ app.put("/api/delete-photo", (req, res) => {
     if (err) throw err;
     // console.log(userData.id);
     const indPlace = await Place.findById(id);
-    const pa = indPlace.photos;
-    const addedPhotos = [];
-    for (j = 0; j < pa.length; j++) {
-      if (pa[j].public_id != photo.public_id) {
-        addedPhotos.push({ url: pa[j].url, public_id: pa[j].public_id });
+    if (indPlace) {
+      const pa = indPlace.photos;
+      const addedPhotos = [];
+      for (j = 0; j < pa.length; j++) {
+        if (pa[j].public_id != photo.public_id) {
+          addedPhotos.push({ url: pa[j].url, public_id: pa[j].public_id });
+        }
       }
-    }
-    const {
-      title,
-      address,
-      description,
-      price,
-      perks,
-      extraInfo,
-      checkIn,
-      checkOut,
-      maxGuests,
-    } = indPlace;
-    if (userData.id === indPlace.owner.toString()) {
-      indPlace.set({
+      const {
         title,
         address,
-        photos: addedPhotos,
         description,
+        price,
         perks,
         extraInfo,
         checkIn,
         checkOut,
         maxGuests,
-        price,
-      });
-      await indPlace.save();
-      res.json("ok");
+      } = indPlace;
+      if (userData.id === indPlace.owner.toString()) {
+        indPlace.set({
+          title,
+          address,
+          photos: addedPhotos,
+          description,
+          perks,
+          extraInfo,
+          checkIn,
+          checkOut,
+          maxGuests,
+          price,
+        });
+        await indPlace.save();
+        res.json("ok");
+      }
     }
   });
 });
