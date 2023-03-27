@@ -25,7 +25,7 @@ cloudinary.config({
 app.use(
   cors({
     credentials: true,
-    origin: "http://localhost:5173",
+    origin: "https://booking-app-y2lt.onrender.com",
   })
 );
 
