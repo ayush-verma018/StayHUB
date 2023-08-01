@@ -1,18 +1,15 @@
-# Booking app https://abhijeet-booking-app.vercel.app/
-
 # Test Login credentials
 
-email: test1@gmail.com pass: test1,
-email: test2@gmail.com pass: test2
+email: test@gmail.com pass: test
 
 # Objective
 
-Creating an Airbnb type accommodation booking webapp
+Creating an Airbnb-type accommodation booking web app
 
 # Frontend:
 
 1. The project has been initialized using Vite.
-2. ReactJS has been used for frontend.
+2. ReactJS has been used for front end.
 3. The designing and CSS stuff is handled through Tailwind CSS.
 4. All the GET and POST requests are handled through Axios.
 5. Routing of pages is handled by React Router Dom.
@@ -26,4 +23,4 @@ Creating an Airbnb type accommodation booking webapp
 
 # Database:
 
-A combination of MongoDB and Cloudinary API has been used for storage of data and images.
+A combination of MongoDB and Cloudinary API has been used to store data and images.
