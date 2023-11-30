@@ -4,7 +4,7 @@ email: test@gmail.com pass: test
 
 # Objective
 
-Creating an Airbnb-type accommodation booking web app
+Creating an accommodation booking web app - STAYHUB
 
 # Frontend:
 
