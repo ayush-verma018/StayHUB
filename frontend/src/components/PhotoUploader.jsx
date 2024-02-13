@@ -5,16 +5,16 @@ export default function PhotosUploader({ addedPhotos, onChange, id }) {
   function uploadPhoto(ev) {
     const files = ev.target.files;
     for (let i = 0; i < files.length; i++) {
-      if (files[i].type !== "image/jepg" && files[i].type !== "image/png") {
-        console.log(0);
-        continue;
-      }
+      // if (files[i].type !== "image/jepg" && files[i].type !== "image/png") {
+      //   console.log(0);
+      //   continue;
+      // }
       console.log(1);
       const data = new FormData();
       data.append("file", files[i]);
       data.append("upload_preset", "booking-app");
-      data.append("cloud_name", "thisabhijeet");
-      fetch("https://api.cloudinary.com/v1_1/thisabhijeet/image/upload", {
+      data.append("cloud_name", "dgau25rss");
+      fetch("https://api.cloudinary.com/v1_1/dgau25rss/image/upload", {
         method: "post",
         body: data,
       })
