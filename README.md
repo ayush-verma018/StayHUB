@@ -1,5 +1,3 @@
-# Booking app https://abhijeet-booking-app.vercel.app/
-
 # Test Login credentials
 
 email: test1@gmail.com pass: test1,
@@ -7,7 +5,7 @@ email: test2@gmail.com pass: test2
 
 # Objective
 
-Creating an Airbnb type accommodation booking webapp
+Creating an accommodation booking webapp - StayHUB
 
 # Frontend:
 
